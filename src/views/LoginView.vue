@@ -10,15 +10,11 @@
       <h2>Login</h2>
       <input type="email" placeholder="Email" required v-model="email" />
       <h2></h2>
-      <input
-        type="Password"
-        placeholder="Password"
-        required
-        v-model="password"
-      />
+      <input type="Password" placeholder="Password" required v-model="password"/>
       <h2></h2>
       <button>Login</button>
     </form>
+    <p>If you don't have an account, please <span> <b>Sign up </b> </span> </p>
   </div>
 </template>
 
@@ -62,5 +58,9 @@ div {
   padding: 20px;
   width:35%;
   border-width: 5px;
+}
+
+span{
+  text-decoration: underline;
 }
 </style>
