@@ -42,25 +42,25 @@ input, select {
 }
 
 button{
-  width: 100%;
+  width: 80%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: darkgreen;
 }
 
 div {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #f4f4f4;
   padding: 20px;
-  width:25%;
+  width:35%;
   border-width: 5px;
 }
 </style>

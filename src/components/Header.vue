@@ -7,10 +7,9 @@
 
 <style scoped>
 #nav {
-  background: #3D4450;
+  background: transparent;
   position: sticky;
   top: 0;
-  border-radius: 10px;
   padding: 25px
 }
 #nav a {
@@ -24,7 +23,8 @@
 }
 
 #nav a:hover {
-  background: hsl(0, 5%, 75%);
+  background: purple;
+
 }
 
 #nav a.router-link-exact-active{
