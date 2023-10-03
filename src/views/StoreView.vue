@@ -1,13 +1,20 @@
 <template>
   <div class="home">
-    <h1>This is a Home page</h1>
+    <div>
+      <h1>Introducing Swipestore!</h1>
+      <p><em>Saving you money one swipe at a time</em></p>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-primary">Left</button>
+      <button type="button" class="btn btn-primary">Middle</button>
+      <button type="button" class="btn btn-primary">Right</button>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  components: {
 
-  }
-}
+export default {
+  components: {},
+};
 </script>

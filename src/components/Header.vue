@@ -15,6 +15,7 @@
 }
 #nav div a {
   background: #ddd;
+  color: #541a8b;
   padding: 10px 20px 10px 20px;
   border-radius: 10px;
   font-weight: bold;
@@ -39,6 +40,6 @@
 }
 
 .navOp{
-  display: inline
+  display: inline;
 }
 </style>
