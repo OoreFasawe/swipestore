@@ -6,28 +6,57 @@
       height="150"
       width="150"
     />
-    <form @submit="signup">
+    <form @submit.prevent="signup">
       <h2>Sign Up</h2>
       <input type="text" placeholder="Username" required v-model="username" />
       <h2></h2>
       <input type="email" placeholder="Email" required v-model="email" />
       <h2></h2>
-      <input type="Password" placeholder="Password" required v-model="password"/>
+      <input
+        type="Password"
+        placeholder="Password"
+        required
+        v-model="password"
+      />
       <h2></h2>
       <button>Sign up</button>
     </form>
-    <p>If you are already registered, <span @click = "gotoLogin"><b>Login </b></span> </p>
+    <p>
+      If you are already registered,
+      <span @click="gotoLogin"><b>Login </b></span>
+    </p>
   </div>
 </template>
 
 <script>
-export default({
-    methods:{
-        gotoLogin(){
-            this.$router.push({name: 'login'})
+import { auth } from "../Firebase/init.js";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+export default {
+  data() {
+    return {
+      username: "",
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    gotoLogin() {
+      this.$router.push({ name: "login" });
+    },
+    signup() {
+      createUserWithEmailAndPassword(auth, this.email, this.password).then(
+        () => {
+          updateProfile(auth.currentUser, {
+            displayName: this.username,
+          }).then(() => {
+            console.log("Display: ", auth.currentUser.displayName);
+            this.$router.push({name:'home'});
+          });
         }
-    }
-})
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -73,7 +102,7 @@ div {
   border-width: 5px;
 }
 
-span{
+span {
   text-decoration: underline;
 }
 </style>
