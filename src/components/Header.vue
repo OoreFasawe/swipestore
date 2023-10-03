@@ -1,6 +1,8 @@
 <template>
   <div id="nav">
-    <router-link :to="{name: 'about'}">About</router-link>
+    <div class = "ms-auto">
+      <router-link :to="{name: 'about'}" class="about">About</router-link>
+    </div>
     <router-link :to="{name: 'home'}">Swipestore</router-link>
   </div>
 </template>
@@ -29,5 +31,9 @@
 
 #nav a.router-link-exact-active{
 background: hsl(0, 5%, 75%);
+}
+
+.about{
+  align-self: left;
 }
 </style>
