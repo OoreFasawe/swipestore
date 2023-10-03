@@ -16,9 +16,19 @@
       <h2></h2>
       <button>Sign up</button>
     </form>
-    <p>If you are already registered, <span><b>Login </b></span> </p>
+    <p>If you are already registered, <span @click = "gotoLogin"><b>Login </b></span> </p>
   </div>
 </template>
+
+<script>
+export default({
+    methods:{
+        gotoLogin(){
+            this.$router.push({name: 'login'})
+        }
+    }
+})
+</script>
 
 <style scoped>
 .center {

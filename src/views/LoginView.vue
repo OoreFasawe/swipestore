@@ -14,9 +14,21 @@
       <h2></h2>
       <button>Login</button>
     </form>
-    <p>If you don't have an account, please <span> <b>Sign up </b> </span> </p>
+    <p>If you don't have an account, please <span @click = "gotoSignup"> <b>Sign up </b> </span> </p>
   </div>
 </template>
+
+<script>
+
+export default ({
+  methods:{
+    gotoSignup(){
+      this.$router.push({name: 'sign up'})
+    }
+  }
+})
+</script>
+
 
 <style scoped>
 .center {
