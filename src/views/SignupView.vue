@@ -50,7 +50,7 @@ export default {
             displayName: this.username,
           }).then(() => {
             console.log("Display: ", auth.currentUser.displayName);
-            this.$router.push({name:'home'});
+            this.$router.push({name:'store'});
           });
         }
       );

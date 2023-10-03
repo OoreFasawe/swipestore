@@ -42,7 +42,7 @@ export default {
     },
     login() {
       signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
-        this.$router.push({ name: "home" });
+        this.$router.push({ name: "store" });
       });
     },
   },
