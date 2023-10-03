@@ -46,6 +46,8 @@ export
 <style scoped>
 .btn-group {
   height: 30px;
+  border: none;
+  border-radius: 10px;
 }
 
 #info{
@@ -91,6 +93,7 @@ form {
 }
 
 #checkStore {
+  height: 50px;
   width: 50%;
   background-color: #4caf50;
   color: white;
@@ -103,8 +106,27 @@ form {
   text-align: bottom;
 }
 
-button.active{
+/* button.active {
   background-color: blue
+} */
+#buyButton {
+  font-weight: bold;
+}
+#sellButton {
+  font-weight: bold;
+}
+
+#buyButton.active {
+  background-color: green;
+}
+#sellButton.active {
+  background-color: red;
+}
+button{
+  border-radius: 10px;
+  border: none;
+  width: 40px;
+ 
 }
 
 </style>

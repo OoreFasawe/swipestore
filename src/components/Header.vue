@@ -17,7 +17,7 @@
   background: #ddd;
   color: #541a8b;
   padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+  border-radius: 30px;
   font-weight: bold;
   font-size: 15px;
   text-decoration: none;
@@ -26,6 +26,7 @@
 
 #nav div a:hover {
   background: purple;
+  color: white;
 }
 
 #nav div .router-link-exact-active {

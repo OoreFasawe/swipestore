@@ -25,6 +25,10 @@
 
 <style scoped>
 
+img{
+ height: 100%;
+ width: 80%;
+}
 p{
   font-family: Arial, sans-serif;
       line-height: 1.6;
