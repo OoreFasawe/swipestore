@@ -55,7 +55,9 @@ button{
 
 .button-primary {
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
+  height: 50px;
+  width: 60px;
 }
 .button-primary:hover{
   background-color: green;
@@ -64,6 +66,11 @@ button{
 .back-button{
   border: none;
   border-radius: 10px;
+}
+.back-button:hover{
+  background-color: purple;
+  color: white;
+  font-weight: bold;
 }
 .card-body{
   border-radius: 15px;
