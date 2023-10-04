@@ -1,6 +1,7 @@
 <template>
     <button @click="gotoStore">Back</button>
-    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
+    <h1>SwipeBoard</h1>
+    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto"> 
       <div v-for="i in swipesList" :key="i" class="card mb-3 mt-3">
         <div class="card-body">
           <h5 class="card-title">${{i.price}}</h5>
@@ -40,3 +41,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h1{
+    margin:20px;
+    color: #541a8b;
+}
+</style>
