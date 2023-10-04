@@ -4,7 +4,7 @@
       <div v-for="i in swipesList" :key="i" class="card mb-3 mt-3">
         <div class="card-body">
           <h5 class="card-title">${{i.price}}</h5>
-          <button @click="toggleDone(i.id)" class="button ">Buy</button>
+          <button class="button ">Buy</button>
         </div>
       </div>
     </div>

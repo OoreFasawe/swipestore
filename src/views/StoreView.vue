@@ -156,6 +156,13 @@ input.button {
   cursor: pointer;
 }
 
+#buyButton{
+  font-weight: bold;
+}
+
+#sellButton{
+  font-weight: bold;
+}
 #buyButton.active {
   background-color: rgb(92, 92, 196);
 }
