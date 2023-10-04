@@ -44,7 +44,7 @@
 
 <script>
 import {onSnapshot, collection, addDoc, deleteDoc, doc, updateDoc} from 'firebase/firestore'
-import db from '../Firebase/init.js'
+import db, { auth } from '../Firebase/init.js'
 export default {
   components: {},
   data() {
@@ -73,9 +73,10 @@ export default {
     checkStore(){
       if(!this.saleType){
         addDoc(collection(db, 'sellSwipes'), {
-        price: parseFloat(this.price)
+        price: parseFloat(this.price),
+        username: auth.currentUser.displayName,
         })
-        console.log("sell swipe registered! \nPrice = ", this.price)
+        console.log("sell swipe registered! \nPrice = ", this.price, " by: ", auth.currentUser.displayName)
         this.price=""
       }
       else{
