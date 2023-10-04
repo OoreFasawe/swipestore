@@ -1,5 +1,6 @@
 <template>
   <div id="footer">
+    Contact us:
     <a href="https://instagram.com/oore_fasawe">
       <img
         alt="IG logo"
