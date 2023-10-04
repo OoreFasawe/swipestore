@@ -4,9 +4,9 @@
     <div class="col-sm-6 mb-3 mb-sm-0 mx-auto"> 
       <div v-for="i in swipesList" :key="i" class="card mb-3 mt-3">
         <div class="card-body">
-          <h5 class="card-title">{{i.username}}</h5>
+          <h5 class="card-title1">{{i.username}}</h5>
           <button class="button-primary">Buy</button> 
-          <h5 class="card-title">${{i.price}}</h5>
+          <h5 class="card-title2">${{i.price}}</h5>
         </div>
       </div>
     </div>
@@ -76,4 +76,5 @@ button{
 .card-body{
   border-radius: 15px;
 }
+
 </style>
