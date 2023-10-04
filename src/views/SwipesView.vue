@@ -62,6 +62,7 @@ button{
 .button-primary:hover{
   background-color: green;
   color: white;
+  font-weight: bold;
 }
 .back-button{
   border: none;
