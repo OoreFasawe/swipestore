@@ -1,8 +1,12 @@
 <template>
   <div id="nav">
-    <div class = "left navOp"><router-link :to="{ name: 'about' }" >About</router-link></div>
-    
-    <div class = "right navOp"><router-link :to="{ name: 'store' }">Swipestore</router-link></div>
+    <div class="left navOp">
+      <router-link :to="{ name: 'about' }">About</router-link>
+    </div>
+
+    <div class="right navOp">
+      <router-link :to="{ name: 'store' }">Swipestore</router-link>
+    </div>
   </div>
 </template>
 
@@ -37,10 +41,10 @@
   float: left;
 }
 .right {
-  float:right;
+  float: right;
 }
 
-.navOp{
+.navOp {
   display: inline;
 }
 </style>

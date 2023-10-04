@@ -3,43 +3,86 @@
     <div>
       <h1>Introducing Swipestore!</h1>
       <p><em>"Saving you money one swipe at a time...""</em></p>
-      <hr>
+      <hr />
     </div>
-    <form>
+    <form @submit.prevent="checkStore">
       <h4>What do you want to do?</h4>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button id="buyButton" :class="{'active': this.saleType}" type="button" @click="changeToBuy">Buy</button>
-        <button id="sellButton" :class="{'active': !this.saleType}" type="button" @click="changeToSell">Sell</button>
+        <input
+          class="button"
+          id="buyButton"
+          :class="{ active: saleType }"
+          type="button"
+          @click="changeToBuy"
+          value="Buy"
+        />
+        <input
+          id="sellButton"
+          class="button align-baseline"
+          :class="{ active: !saleType }"
+          type="button"
+          @click="changeToSell"
+          value="Sell"
+        />
       </div>
       <h2></h2>
-      <button id="checkStore">Show available swipes!</button>
+      <input
+        class="input"
+        :hidden="this.saleType"
+        v-model="price"
+        placeholder="Price ..."
+        type="text"
+      />
+      <h2></h2>
+      <button id="submitButton"
+        :disabled="!saleType && !price" >
+        {{ submitText }}
+      </button>
     </form>
   </div>
 </template>
 
 <script>
-export
- default {
+import {onSnapshot, collection, addDoc, deleteDoc, doc, updateDoc} from 'firebase/firestore'
+import db from '../Firebase/init.js'
+export default {
   components: {},
   data() {
     return {
       saleType: 1,
+      price:null,
+      submitText: "Show available swipes!"
     };
   },
-  methods:{
-    changeToBuy(){
-      if(this.saleType!=1){
+  methods: {
+    changeToBuy() {
+      if (this.saleType != 1) {
         this.saleType = 1;
         console.log(this.saleType);
+        this.submitText = "Show available swipes!"
       }
     },
-    changeToSell(){
-      if(this.saleType!=0){
-        this.saleType=0;
+    changeToSell() {
+      if (this.saleType != 0) {
+        this.saleType = 0;
+        this.price = null;
         console.log(this.saleType);
+        this.submitText = "Sell swipes!"
       }
-    }
-  }
+    },
+    checkStore(){
+      if(!this.saleType){
+        addDoc(collection(db, 'sellSwipes'), {
+        price: parseFloat(this.price)
+        })
+        console.log("sell swipe registered! \nPrice = ", this.price)
+        this.price=""
+      }
+      else{
+        this.$router.push({name:'swipes page'});
+      }
+    },
+  },
 };
 </script>
 
@@ -50,12 +93,12 @@ export
   border-radius: 10px;
 }
 
-#info{
+#info {
   border-radius: 10px;
   background-color: #f4f4f4;
-  padding:5%;
+  padding: 5%;
   width: 60%;
-  height:80%;
+  height: 80%;
   border-width: 5px;
 }
 
@@ -67,20 +110,21 @@ export
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-h1{
-  margin:0 0 20px 0
+h1 {
+  margin: 0 0 20px 0;
 }
 
-p{
-  margin:0 0 30px 0
+p {
+  margin: 0 0 30px 0;
 }
 
-hr{
-  margin:0 0 50px 0
+hr {
+  margin: 0 0 50px 0;
 }
 
-h4,h2{
-  margin: 0 0 30px 0
+h4,
+h2 {
+  margin: 0 0 30px 0;
 }
 
 form {
@@ -89,44 +133,33 @@ form {
   height: 70%;
   border-width: 5px;
   border-radius: 10px;
-
 }
-
-#checkStore {
-  height: 50px;
+#submitButton {
   width: 50%;
   background-color: #4caf50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
+  border-width: 0.5px;
   border-radius: 10px;
   cursor: pointer;
   vertical-align: bottom;
   text-align: bottom;
 }
 
-/* button.active {
-  background-color: blue
-} */
-#buyButton {
-  font-weight: bold;
-}
-#sellButton {
-  font-weight: bold;
+input.button {
+  background-color: #f4f4f4;
+  padding: 0px 20px 0px 20px;
+  border: 5px;
+  margin: 0px 10px 0px 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #buyButton.active {
-  background-color: green;
+  background-color: rgb(92, 92, 196);
 }
 #sellButton.active {
-  background-color: red;
+  background-color: rgb(235, 52, 52);
 }
-button{
-  border-radius: 10px;
-  border: none;
-  width: 40px;
- 
-}
-
 </style>

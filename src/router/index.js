@@ -3,13 +3,9 @@ import StoreView from '../views/StoreView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
+import SwipesView from '../views/SwipesView.vue'
 
 const routes = [
-  {
-    path: '/store',
-    name: 'store',
-    component: StoreView
-  },
   {
     path: '/login',
     name: 'login',
@@ -24,7 +20,17 @@ const routes = [
     path: '/',
     name: 'sign up',
     component: SignupView
-  }
+  },
+  {
+    path: '/store',
+    name: 'store',
+    component: StoreView
+  },
+  {
+    path: '/store/available-swipes',
+    name: 'swipes page',
+    component: SwipesView
+  },
 ]
 
 const router = createRouter({
