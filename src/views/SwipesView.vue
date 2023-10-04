@@ -1,5 +1,5 @@
 <template>
-    <button @click="gotoStore">Back</button>
+    <button class="back-button" @click="gotoStore">Back</button>
     <h1>SwipeBoard</h1>
     <div class="col-sm-6 mb-3 mb-sm-0 mx-auto"> 
       <div v-for="i in swipesList" :key="i" class="card mb-3 mt-3">
@@ -53,4 +53,19 @@ button{
     margin-bottom: 15px;
 }
 
+.button-primary {
+  border: none;
+  border-radius: 10px;
+}
+.button-primary:hover{
+  background-color: green;
+  color: white;
+}
+.back-button{
+  border: none;
+  border-radius: 10px;
+}
+.card-body{
+  border-radius: 15px;
+}
 </style>

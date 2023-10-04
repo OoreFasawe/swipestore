@@ -135,6 +135,11 @@ form {
   border-width: 5px;
   border-radius: 10px;
 }
+input{
+  border: none;
+  border-radius: 10px;
+}
+
 #submitButton {
   width: 50%;
   background-color: #4caf50;
