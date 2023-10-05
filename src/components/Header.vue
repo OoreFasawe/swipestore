@@ -6,6 +6,13 @@
     <div class="right navOp">
       <router-link :to="{ name: 'store' }">Swipestore</router-link>
       <button  @click="signOut">Logout</button>
+      <img
+        id = "profilePhoto"
+        alt="IG logo"
+        src="../assets/defaultProfilePhoto.jpeg"
+        height="30"
+        width="30"
+      />
     </div>
   </div>
 </template>
@@ -72,5 +79,11 @@ button {
 
 .navOp {
   display: inline;
+}
+
+#profilePhoto{
+  border-width: 30px;
+  border-radius: 15px;
+  border-color: black;
 }
 </style>

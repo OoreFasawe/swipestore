@@ -7,6 +7,7 @@
 <script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import {auth} from "./Firebase/init.js";
 
 export default {
   components: {
@@ -18,6 +19,11 @@ export default {
       isLoggedIn: false
     }
 
+  },
+  beforeMount(){
+    if(auth.currentUser == null){
+      this.$router.push({name: 'login'})
+    }
   },
   methods:{
     logIn(showHeader){

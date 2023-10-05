@@ -4,6 +4,8 @@ import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
 import SwipesView from '../views/SwipesView.vue'
+import NotFound from '../views/NotFound.vue'
+
 
 const routes = [
   {
@@ -31,6 +33,12 @@ const routes = [
     name: 'swipes page',
     component: SwipesView
   },
+  // catchall 404
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
+  }
 ]
 
 const router = createRouter({

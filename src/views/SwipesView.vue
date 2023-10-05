@@ -1,4 +1,4 @@
-<template>
+<template> 
     <button class="back-button" @click="gotoStore">Back</button>
     <h1>SwipeBoard</h1>
     <div class="col-sm-6 mb-3 mb-sm-0 mx-auto"> 
@@ -67,6 +67,7 @@ button{
 .back-button{
   border: none;
   border-radius: 10px;
+  align-self: center;
 }
 .back-button:hover{
   background-color: purple;
