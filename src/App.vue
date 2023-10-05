@@ -1,7 +1,7 @@
 <template>
-  <Header/>
-  <router-view />
-  <Footer />
+  <Header @loggedIn ="logIn" v-if="isLoggedIn"/>
+  <router-view @loggedIn ="logIn"/>
+  <Footer/>
 </template>
 
 <script>
@@ -13,6 +13,22 @@ export default {
     Header,
     Footer,
   },
+  data(){
+    return{
+      isLoggedIn: false
+    }
+
+  },
+  methods:{
+    logIn(showHeader){
+      if(showHeader){
+        this.isLoggedIn = true
+      }
+      else{
+        this.isLoggedIn = false
+      }
+    }
+  }
 };
 </script>
 

@@ -49,10 +49,10 @@ export default {
           updateProfile(auth.currentUser, {
             displayName: this.username,
           }).then(() => {
-            
-
             console.log("Display: ", auth.currentUser.displayName);
+            this.$emit("loggedIn", true);
             this.$router.push({name:'store'});
+            
           });
         }
       );

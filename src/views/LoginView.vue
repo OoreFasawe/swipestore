@@ -42,6 +42,7 @@ export default {
     },
     login() {
       signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
+        this.$emit("loggedIn", true);
         this.$router.push({ name: "store" });
       });
     },

@@ -175,4 +175,9 @@ input.button {
 #sellButton.active {
   background-color: rgb(235, 52, 52);
 }
+
+#submitButton:disabled{
+  cursor:default;
+  background-color: rgb(34, 230, 165);
+}
 </style>
